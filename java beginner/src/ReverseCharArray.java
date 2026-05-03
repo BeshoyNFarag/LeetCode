@@ -2,13 +2,17 @@ public class ReverseCharArray {
 
     public void reverseString(char[] s) {
 
-        String str = String.valueOf(s);
+        char temp = ' ';
 
-        StringBuffer sb = new StringBuffer(str);
-        sb.reverse();
-        str = sb.toString();
-        s = str.toCharArray();
-        System.out.println(s);
+        for(int i = 0; i < s.length / 2 ; i++) {
+            temp = s[i];
+            s[i] = s[s.length - 1 - i];
+            s[s.length - 1 - i] = temp;
+        }
+
+
+
+
     }
 
 
