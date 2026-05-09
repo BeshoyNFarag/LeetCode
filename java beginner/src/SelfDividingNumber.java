@@ -2,46 +2,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SelfDividingNumber {
-    List<Integer> list = new ArrayList<>();
+
     public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> list = new ArrayList<>();
+        int [] numbers = new int[(right-left) + 1];
+        for(int i = 0; i < numbers.length; i++){
+            numbers[i] = left;
+            left++;
+        }
 
-        List<Integer> list = new ArrayList<Integer>();
-        int current = left;
-
-
-        while(current <= right) {
-            String str = String.valueOf(current);
-            int count = 0;
-            char [] numbers = str.toCharArray();
-            int currentSize = numbers.length;
-            for(int i = 0; i < currentSize; i++) {
-
-                if(numbers.length == 1){
-                    list.add(current);
-                    current++;
+        for(int num : numbers){
+            char [] characters = Character.toChars(num);
+            int karmaCount = 0;
+            for(char c : characters){
+                if(karmaCount == characters.length){
+                    list.add(num);
+                }
+                if(num % Character.getNumericValue(c)== 0){
+                    karmaCount++;
+                }
+                else
                     break;
-                }
-                if(count == currentSize ) {
-                    list.add(current);
-                    current ++;
-                }
-                if(current % ((int) numbers[i]) == 0 && (int) numbers[i] != 0) {
-                    count++;
-                }
-
-                else {
-                    current++;
-                    break;
-                }
 
             }
-
         }
 
 
 
-
         return list;
-
     }
+
 }
