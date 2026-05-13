@@ -1,7 +1,7 @@
 public class MorseCode {
 
     public int uniqueMorseRepresentations(String[] words) {
-
+        return 0;
     }
 
 
