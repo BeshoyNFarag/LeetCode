@@ -17,6 +17,6 @@ public class MergeSortedArray {
             }
         }
 
-         arrayList;
+
     }
 }
